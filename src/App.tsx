@@ -1,25 +1,16 @@
-import React from 'react';
-import logo from './logo.svg';
+import {FC, useState} from 'react';
 import './App.css';
+// @material ui/core
+import { Box, Typography, Button } from '@material-ui/core';
 
-function App() {
+const App: FC = () => {
+  const [counter, setCounter] = useState<number>(0);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Box className="App">
+      <Typography variant="h1">{counter}</Typography>
+      <Button onClick={() => {setCounter(counter + 1)}}>Increase</Button>
+      <Button onClick={() => {setCounter(counter - 1)}}>Increase</Button>
+    </Box>
   );
 }
 
